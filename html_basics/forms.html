@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>html forms, getting user input... boo!</title>
+</head>
+<body>
+
+
+<h1>Log In:</h1>
+<!-- <h2>please input user id and password</h2> -->
+
+<!-- <form class="" action="index.html" method="post"> -->
+<!-- 	<form>
+		<input type="email" name="useremail" value="Email Here">
+		<input type="password" name="user_password">
+		<input type="submit" value="click me">
+	</form>
+
+	<form>
+		<h2>Pick a fav color</h2>
+		<input type="color">
+	</form>
+ -->
+
+<!-- bad coding pattern -->
+<!-- 	<form>
+		<label>
+			Enter User Id:
+			<input type="email">
+		</label>
+		<label>
+			Enter Address:
+			<input type="addres">
+		</label>
+		<input type="submit" name="submit">
+	</form>
+ -->
+	<!-- <form> -->
+	<!-- <form action="http://www.facebook.com" method="post">
+		<label for="input_hook">Enter Value</label>
+		<input id="input_hook" name="userinput" placeholder="Enter email" required>
+		<input type="submit" name="submit" >
+	</form> -->
+<!-- file:///Users/primusdj/github/tut_udemy_django/html_basics/forms.html?userinput=hello%40run.me&submit=Submit -->
+
+
+<!-- This is a hotel feed back form -->
+
+	<h1>Hotel feedback form</h1>
+
+	<form>
+		<h3>Question 1: with 2 choices</h3>
+		<label for="choiceone">Making choice one</label>
+		<input id="choiceone" name="samechoice" type="radio" value="choice_one">
+		
+		<label for="choicetwo">Making choice two</label>
+		<input id="choicetwo" name="samechoice" type="radio" value="choice_two">
+
+		<h3>Question 2: with options</h3>
+		<select name="stars">
+			<option value="option_one">3</option>
+			<option value="option_two">2</option>
+			<option value="option_one">1</option>
+		</select>
+		
+		<p>
+			<input type="submit" name="submit" value="SUBMIT">
+		</p>
+
+		<h3>Question 3: with text area</h3>
+		<textarea name="atextarea" rows="8" cols="80"></textarea>
+
+	<!-- without text area
+		? samechoice=choice_one
+		& stars=option_one
+		& submit=SUBMIT -->
+	
+
+	<!-- with text area
+		? samechoice=choice_one
+		& stars=option_two
+		& submit=SUBMIT 
+		& atextarea=yes+i+see+that+%0D%0Ai+can+write%0D%0Atext+into%0D%0Athis+area%0D%0Aare+you+sure%0D%0Ait%27s+%0D%0Aa+%0D%0Aenough%0D%0Afor+me%3F -->
+
+
+	</form>
+
+</body>
+</html>

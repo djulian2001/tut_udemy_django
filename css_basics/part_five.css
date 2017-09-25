@@ -1,0 +1,13 @@
+/* general */
+li{
+	color: red;
+}
+
+/* class attribute */
+.topitems{
+	color: blue;
+}
+/* id attribute */
+#tow{
+	border: 3px solid black;
+}

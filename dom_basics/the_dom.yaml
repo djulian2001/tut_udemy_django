@@ -1,0 +1,101 @@
+---
+DOM: document object model
+  - the dom will allow us to interface our javascript code to 
+    interact with html and css
+  - the browser will construct the dom from the html 
+  - a mapped out hirearchy of objects
+
+get the dom:
+  - in the console type:
+    - document
+    - this will return html text of the page
+  - go get the objects type:
+    - console.dir( document )
+    - this will return a javascript object
+the dom is big:
+  - learn how to find the stuff and look up details.
+  - is the glue that binds everything together 
+
+dom attributes:
+  - document.URL
+  - document.body
+  - document.head
+  - document.links
+
+
+dom methods: grabbing stuff from the html page
+  - document.getElementById()
+  - document.getElementByClassName()
+  - document.getElementsByTagName()
+  # below can use syntax similar in css, # for attributes, . for classes, etc
+  - document.querySelector()
+  - document.querySelectorAll()
+
+
+using the dom: examples of using the document object model
+  - assignments to variables:
+    - change the color of the first h1 element on the page
+      var myheader = document.querySelector("h1")  
+        # the equivelent to document.getElementsByTagName("h1")[0]
+      myheader.style.color = 'red';
+        # the h1 tag will now be red
+
+  - random color changes:
+    - javascript code:
+      function get_random_color(){
+        # blocks to build an html color hash
+        var hash_letters = "0123456789ABCDEF";
+        var color = '#';
+        for ( var i = 0; i < 6; i++ ){
+          color += hash_letters[ Math.floor( Math.random() * hash_letters.length ) ]; }
+        return color ; }
+  
+      function change_header_color(){
+        header.style.color = get_random_color(); }
+
+      setInterval( "change_header_color()", 500 );
+
+
+  - part2: changing html and attributes
+    myvar.textContent()   - will get the text
+    myvar.innerHTML()     - will return html objects
+    myvar.getAttribute()  - returns the 'origional' attributes
+    myvar.setAttribute()  - set an attributes value
+
+    example:
+      var para = document.querySelector('p')
+      para.textContent = "new text"    # cant make bold, will ONLY interact with content
+      para.innerHTML = "<strong>new text</strong>" # will be bold
+      var special = document.querySelector("#special")
+      var speciala = special.querySelector('a')
+      speciala  # would be the anchor tag
+      speciala.getAttribute("href")   # prints out the value
+      speciala.setAttribute("href","https://new.value.net") # 2 args required, what with what
+
+  - part3: using js to trigger on events!
+    events are things like on click or on hover
+    add an event listener to achive these events
+
+    - A listening event: has this basic format
+    myvar.addEventListener( event, function );
+
+    for example:
+      var head = document.querySelector( "h1" );  # again first h1 tag
+      head.addEventListener( "click", change_color );
+      
+      events: Clicks, Hovers, Double Clicks, Drags, and many many more.
+      # refeence:
+      #  https://developer.mozilla.org/en-US/docs/web/events
+
+  examples:
+    
+
+
+
+
+
+
+
+
+
+

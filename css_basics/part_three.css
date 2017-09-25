@@ -1,0 +1,53 @@
+/*div{
+	color: green;
+}*/
+
+.div_one{
+	color: blue;
+}
+.div_two{
+	color: red;
+}
+
+#id_one{
+	color: pink;
+	text-decoration: line-through;
+}
+
+/*
+not common but selector to select all tags:
+*{
+	color: black;
+}
+*/
+/* Adjacent selector method, all unordered lists just after an h3 tag*/
+h3 + ul{
+	border: 4px dotted purple;
+}
+
+/* member of selector, anchor tags within list item*/
+li a{
+	color: red;
+}
+
+/* same as above but with a filter*/
+/*li a[href="www.npr.org"]{*/
+li a[href="*.org"]{
+	color: blue;
+	border: 3px double gray;
+}
+/*
+Attribute selectors may match in four ways:
+[att]  		Match when the element sets the "att" attribute, whatever the value of the attribute.
+
+[att=val]	Match when the element's "att" attribute value is exactly "val".
+
+[att~=val]	Match when the element's "att" attribute value is a space-separated list of
+    		"words", one of which is exactly "val". If this selector is used, the words in the 
+    		value must not contain spaces (since they are separated by spaces).
+
+[att|=val]	Match when the element's "att" attribute value is a hyphen-separated list of
+    		"words", beginning with "val". The match always starts at the beginning of the
+    		attribute value. This is primarily intended to allow language subcode matches
+    		(e.g., the "lang" attribute in HTML) as described in RFC 3066 ([RFC3066]).
+*/

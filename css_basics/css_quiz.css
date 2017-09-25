@@ -1,0 +1,45 @@
+body{
+	background-color: #a8e6ff;
+	/* light blue?*/
+}
+
+h1{
+	/* what  pixels type color */
+	border: 1px solid black;
+}
+
+h2{
+	color: purple;
+}
+
+input{
+	border: 2px solid rgba(128,0,0,.8)
+}
+
+div p{
+	background-color: rgba(255, 255, 153,1);
+}
+
+#comments_input{
+	border: 5px solid gray;
+	width: 800px;
+	height: 400px; 
+
+}
+
+a[href="www.google.com"]{
+	color: red;
+}
+
+#itemone{
+	color: purple;
+	text-decoration: overline; 
+}
+
+.exit{
+	background-color: blue;
+	border: 4px dashed yellow;
+}
+a:visited[href="www.google.com"]{
+	color: blue;
+}

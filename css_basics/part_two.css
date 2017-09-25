@@ -1,0 +1,43 @@
+h1{
+	/*font-family: cursive;*/
+	/* 
+	fonts don't always work on all browsers some are common to all
+	like arial below
+	*/
+	font-family: "Arial";
+
+}
+
+p{
+	/*font-family: monospace;*/
+	/* Barrio namespace comes in via the link from googles font api*/
+	font-family: 'Barrio', cursive;
+}
+
+body{
+	font-size: 20px;
+	/* browser common font-size is 16px default*/
+}
+
+/*
+body{
+	font-size: 20px;
+}
+*/
+/* 
+	em values is a ratio from the parent element <body> being the upper most parent
+	em1 = 16px
+	em2 ~ 32px (2x16)
+
+*/
+#two{
+	/*references the body style setting*/
+	font-size: 1.0em;  
+}
+p{	
+	font-style: italic;
+	font-weight: bold;
+}
+h1{
+	text-align: center;
+}

@@ -1,0 +1,78 @@
+div[id="main_content_titles"]{
+	text-align: center;
+	font-family: 'Barrio', cursive;
+}
+
+.color_pallet{
+	border: 1px solid pink;
+	background-color: yellow;
+}
+
+.pallet_container{
+	display: table-cell;
+	margin: 5px;
+	padding: 5px;
+	width: 7.6923%;
+}
+
+p{
+	margin: 2px;
+	padding: 2px;
+	width: 60px;
+	height: 100px;
+	text-indent: center;
+
+}
+
+#p_pallet_1{
+	background-color: yellow;
+	color: yellow;
+}
+#p_pallet_2{
+	background-color: GreenYellow;
+	color: GreenYellow;
+}
+#p_pallet_3{
+	background-color: Aquamarine;
+	color: Aquamarine;
+}
+#p_pallet_4{
+	background-color: LightSkyBlue;
+	color: LightSkyBlue;
+}
+#p_pallet_5{
+	background-color: MediumPurple;
+	color: MediumPurple;
+}
+#p_pallet_6{
+	background-color: Orchid;
+	color: Orchid;
+}
+#p_pallet_7{
+	background-color: Plum;
+	color: Plum;
+}
+#p_pallet_8{
+	background-color: PaleVioletRed;
+	color: PaleVioletRed;
+}
+#p_pallet_9{
+	background-color: IndianRed;
+	color: IndianRed;
+}
+#p_pallet_10{
+	background-color: Tomato;
+	color: Tomato;
+}
+#p_pallet_11{
+	background-color: LightSalmon;
+	color: LightSalmon;
+}
+#p_pallet_12{
+	background-color: Orange;
+	color: Orange;
+}
+#p_pallet_13{
+	background-color: Gold;
+	color: Gold;
+}

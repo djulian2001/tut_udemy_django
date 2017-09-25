@@ -1,0 +1,27 @@
+---
+# bootstrap frame work for front end dev
+bootstrap:
+  - verstion: 4 
+  - desc: 
+    - is a framework for css
+    - framework is giving up control
+    - provides structure to gain abstractions
+  - new stuff:
+    - panels are replaced by cards
+    - larger default font sizes
+    - new grid tier XL
+    - use of the flexbox
+    - moved from Less to Sass
+  - reference documentation:
+    - url: https://getbootstrap.com
+      - downloads:
+        - bootstrap
+          - using a CDN, conent delivery network
+        - source
+          - install in your code
+        - Sass
+        - 
+    - 
+
+Part One:
+  

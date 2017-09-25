@@ -1,0 +1,149 @@
+---
+django high level:
+  client side (browser) 
+    -> makes a url request 
+    -> network stuff
+    -> server recives the request
+      -> django service processes the requested url:
+        -> file: urls.py
+          this urls.py file is mapped via a 'call' to a views.py file
+          -> file: views.py
+            the views.py file contains call(s) to models.py file
+            -> file: models.py
+              the models.py file has a connection to the database platform
+              <-> service: SQLite, postgresql, etc. as defined by the app driver being used
+                -> the connection and sql statement is evaluated
+                <- data is returned
+            <- file: models.py
+               data is loaded into an object model
+          <- file: views.py
+            constructs the layout of the requested url
+          
+          <- files: Frontend
+            - Templates:
+            - HTML: reference ./html_basics
+            - CSS: reference ./css_basics
+            - Javascript: reference ./dom/basics ./java_scripts
+
+Command Line:
+  skipped...
+
+Python:
+  install:
+    He's recommending miniconda 4.3.0 with python 3.6 version.
+
+    I'm going to use vagrant with just python 3.6
+
+  why is python a dynamic language:
+  
+  Comments:
+      # this is a comment
+
+  numbers:
+    integers
+    floating point
+    math functions:
+      + addition
+      - substraction
+      * multiplication
+      / division
+      ** powers where power is >= 1
+      ** square root is where < 1
+
+    order of operations are followed: () * / + - 
+
+    assignments:
+      a = value
+
+  strings:
+    rules:
+      strings are immutable
+        so trying to item assignments like
+          # this is a TypeError: 'str' object does not support item assignment
+          my_string[0]='x'
+    formats:
+      "hello"
+      'hello'
+      "I'm a dog"
+    
+    Indexing:    
+      my_string = "a value"
+      print( my_string )     # out: a value
+      print( my_string[1] )  # out: a
+      print( my_string[-1] ) # out: e
+
+    Slicing:
+      my_string = 'a nother value'
+      print( my_string )     # out: a nother value
+      print( my_string[3:] ) # out: other value
+      # up to but not including
+      print( my_string[:3] ) # out: a n
+      print( my_string[3:8] ) # out: other
+
+      # step size
+      print( my_string[:] ) # out: a nother value
+      print( my_string[::1] ) # out: a nother value
+      print( my_string[::2] ) # out: ante au
+
+    Methods:
+      my_string = 'and yet another value'
+      # see the metadata available for the my_string 'str' object
+      dir( my_string )
+
+      print( my_string.upper() )        # out: AND YET ANOTHER VALUE
+      print( my_string.lower() )        # out: and yet another value
+      print( my_string.capitalize() )   # out: And yet another value
+
+      print( my_string.split() )    # out: a list ['and','yet','another','value']  defaults to whitespace
+      print( my_string.split('e') ) # out: a list 
+
+    Formating:
+      # using interpulation
+      "a string with a value to be inserted here: {}".format("inserted baby!")
+      "a string list here: ['{}','{}','{}','{}']".format("inserted baby!","he","is","awesome")
+      "{a} {b} {c} are all the people.".format(a='bob',b='sue',c='ted')
+  lists:
+    # an a array
+    a = ['a','b','c']
+    # lists are muteable
+    Methods:
+      a.append( object )  # out will be [ 'a','b','c', object ]
+
+      say object is a list b = ['e','f']
+      with append a[4] will be the list ['e','f']
+
+      a.extend( b )
+      this will add each element of b onto list a
+      so a[4] will be 'e'
+
+    list comprehencion:
+      x = [['a','b','c'],['d','e','f'],['g','h','i']]
+      col_two_values = [ row[1] for row in x ]   # so for all elements in x take the 2nd item and make a list
+
+  dictionary:
+    # like the hash table in javascript, mappings of key value pairs
+    # there is no order
+    # functions can't be added to dictionaries like they are in js
+
+  tuples:
+    are immutable sequences once set can't be changed?
+    t = (1,2,3)
+    t[0]=4
+    # Traceback (most recent call last):
+    # File "<stdin>", line 1, in <module>
+    # TypeError: 'tuple' object does not support item assignment
+    Methods:
+      dir(t)
+      - dunder Methods +
+      - index
+      - count
+  sets:
+    unordered collections of unique elements
+    b = (1,2,1,2,3)
+    x = set()
+    set(b)      # out: set([1, 2, 3])
+
+  booleans:
+    are just true and false as before
+    - True
+    - False

@@ -1,0 +1,55 @@
+/* This is a comment */
+
+
+body{
+	/*background-color: gray;*/
+	background: url(https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg)
+	/*background: gray;  this is the same as above */
+}
+
+div{
+	background-color: blue;
+	border-color: orange;
+	/*border-width: thick;*/
+	border-width: 5px;
+	border-style: double;
+}
+
+p{
+	color: yellow;
+}
+
+span{
+	background: red;
+	color: black;
+}
+
+/*
+common css pattern
+selected tag{
+	property: value;
+}
+*/
+
+/* googles color picker is very good */
+/*
+h1{
+	color: blue;
+}
+
+li{
+	/*color: green;*/
+	/*color: rgb(8,84,1);*/
+/*	color: rgb(255,97,0);
+}
+
+p{
+	color: #0895a8
+}
+
+h4{
+	color: rgba(255,97,0,.5);  
+*/	/* the rgba is the same as rgb but the a makes the color transparent 
+		on a scale of 1 to 0 (0 being transparient)
+	*/
+/*}*/
