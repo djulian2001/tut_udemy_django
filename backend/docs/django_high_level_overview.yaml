@@ -147,3 +147,212 @@ Python:
     are just true and false as before
     - True
     - False
+
+Control Flow:
+  - operators:
+    assignments:
+      - a variable becomes a type with value(s) using the '=' syntax
+      - variable types determine if the values can be overwritten
+          - muteable or immutable
+    Comparisons:
+      - greater than, 1 > 2   # False
+      - less than, 1 < 2      # True
+      - greater than or equal to, 1 >= 1 # True
+      - less than or equal to, 1 <= 4  # True
+      - equality, 1 == 1   # True
+        - 1 == "1"  # False
+        - 1 == int("1")  # True
+        - 'hi' == 'bye'  # False
+      - not equales or inequality, 1 != 1   #False
+    Logical:
+      - and
+        ( 1 > 2 ) and (2 < 3)  # False
+      - or
+        ( 1 > 2 ) and (2 < 3)  # True
+      - chained or's and and's, order of operations matters
+        ( 1 > 2 ) and (2 < 3) or ( 2 != 3 )  # True
+        ( 1 > 2 ) and ((2 < 3) or ( 2 != 3 ))  # False
+  - if/else:
+    - if
+      if condition(s):
+        code_block_when_true
+    - if else
+      if condition(s):
+        true_code_block
+      else:
+        else_code_block
+
+    - if else if else
+      if condition(s):
+        true_code_block
+      elif condition(s):
+        true_code_block
+      else:
+        else_code_block
+  - loops:
+    - for
+      for item in iterable:
+        item_code_block
+      OR
+      for iter in obj.__iter__:
+        NOTE: * iterable objects have the __iter__ method 
+          like lists, dictionaries, tutles, sets
+
+
+    - while
+      while condition:
+        true_code_block
+
+    - range
+      range(start,stop[,step]):
+        - default start is 0, so
+        - range(5) # range(0,5)
+
+      range()
+      range is a generator:
+        - reason for this is to conserve memory
+        - using ranges to multi thread
+            list(range(0+0,99,4))
+            list(range(0+1,99,4))
+            list(range(0+2,99,4))
+            list(range(0+3,99,4))
+          list(range(99)) == 
+                set(list(range(0+0,99,4)))
+                  .union(list(range(0+1,99,4)))
+                  .union(list(range(0+2,99,4)))
+                  .union(list(range(0+3,99,4)))
+    - list comprehension
+      mechanics:
+        [ item[+ stuff] for item in obj.__iter__ [if condition(s)] ]
+        # out: would be a list of items with + stuff where conditions are true
+        # the catches, obj.__iter__ return type must be compatible with + stuff and if condition
+
+functions:
+  - 'def' keyword defines functions
+
+  main usage: dont repeat yourself
+    pep: 
+      - snake case
+      - must start with letter, plus other rules
+
+
+  functions:
+    - consist of a:
+      - def keyword
+      - a name 
+      - ( and optional args )
+      - followed by a ':'
+      - optional docstring aligned with the functions_code_block
+      - functions_code_block
+      - optional return statement
+
+    - syntax
+    def my_function(param1='param1_default',param2):
+      """
+        docstring_text_block
+      """
+      functions_code_block
+
+
+    - to access the function you have to import the file 
+        which contains the function or it has to be local to the file
+        order can matter.
+    my_function()
+
+  lambda:
+    - a type of function, kinda of a skinny function
+    - also called 'ananamous function'
+
+    example with the filter function:
+      mylist=[1,2,4,3,5,6,7]
+
+      def even_bool(num):
+        return num%2 == 0
+
+      print( filter( even_bool, mylist ) )    
+      # out: a generator object, as a filter object
+      print( list(filter(evaluated, mylist))) 
+      # out: list of even ints
+
+    take above example and make it lambda:
+      # we are replacing the def even_bool(num):
+      lambda num:num%2 == 0
+
+      usage:
+        print( filter( lambda num:num%2 == 0, mylist) )
+
+    what I think is going on here:
+      lambda is a way of defining a simple behavior, called once
+
+      consists of a:
+        - lambda keyword
+        - input parameters
+        - a ":"
+        - a single or simple expression using parameters
+
+      example:
+        lambda args : args[2].join(str(args[0]),args[1])
+
+
+Scope:
+  python builds a namespace to 'map' what variables have been defined
+    and where they are.
+  The following rule is the order that python follows to determine,
+    the variables namespace
+  - LEGB:
+    - local:
+        names within a function, lambda, without any global declarative keyword
+    - enclosing function locals:
+        name in the local scope of any and all enclosing functions (def or lamba)
+          from inner to outer
+        also functions within functions
+    - global:
+        a module variable, names assigned at the top level of a module file,
+          or declared global in a def within the file with the global keyword
+        it's recommended to avoid using global's, instead use return and assignment
+    - built-in:
+        at python (installed), names preassigned in the built-in names module;
+          open, range, len, SyntaxError, etc...
+        avoid overwriting these words.
+
+  - scope examples:
+    # 1
+    x = 25  <- global
+    def my_func():
+      x = 50  <- local
+      return x
+    # 2
+    lambda x: x**2   <- local
+    # 3
+    name = "global"
+    def greet():
+      name = "local"
+      def hello():
+        print("hello {}").format( name )
+      hello()
+    greet()
+    print(name)
+    # 4
+    x = 20
+    def my_func():
+      global x   <- global
+      x = 100
+    print(x) # 20
+    my_func()
+    print(x) # 100
+
+OOP:
+  reference: ./oop.py
+
+  every thing is an object in python
+
+  mylist = [1,2,3]
+  mylist <- is a class list, which has a bunch of methods, 
+    use 'dir' to expose the class list interface
+
+  classes have attributes and methods:
+    - attributes are characterists of the object of type class
+      - object attributes, set on initialization
+      - class object attributes, are the same for ALL instances of the class
+    - methods are opersations that can and will be preformed on the type class
+

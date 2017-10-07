@@ -4,4 +4,6 @@ logs/**
 .project
 *.pyc
 *.egg-info
+backend/war_game/**
+backend/match_game/**
 
